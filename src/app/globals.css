@@ -1,17 +1,199 @@
 @import "tailwindcss";
 
-/* Neutral placeholders only. Carsea's semantic token layer arrives in Phase 2. */
+/*
+ * Carsea token layer. Components use the semantic names below; raw color
+ * values live only in this file (SPEC §10).
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --page: #f4f7f3;
+  --surface: #ffffff;
+  --ink: #12201a;
+  --ink-muted: #46584e;
+  --rule: #b9c8be;
+  --rule-strong: #12201a;
+  --hatch: #dbe4dd;
+
+  --cover: #0e5c3f;
+  --cover-deep: #0a4a32;
+  --on-cover: #f4f7f3;
+  --on-cover-muted: #bfe0cd;
+  --cover-rule: rgb(244 247 243 / 0.22);
+
+  --accent: #0b6b45;
+  --stamp: #5b3fd1;
+  --stamp-wash: #f0edfb;
+  --focus: #5b3fd1;
+
+  --sheet-shadow: 0 1.25rem 2.5rem -1.25rem rgb(6 32 22 / 0.55);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --page: #0c1612;
+  --surface: #13211b;
+  --ink: #e9f1ec;
+  --ink-muted: #a3b8ac;
+  --rule: #2f463b;
+  --rule-strong: #8fa79a;
+  --hatch: #1c2e26;
+
+  --cover: #0e5c3f;
+  --cover-deep: #0a4a32;
+  --on-cover: #f4f7f3;
+  --on-cover-muted: #bfe0cd;
+  --cover-rule: rgb(244 247 243 / 0.22);
+
+  --accent: #5fd39b;
+  --stamp: #ab9bff;
+  --stamp-wash: #231f3d;
+  --focus: #ab9bff;
+
+  --sheet-shadow: 0 1.25rem 2.5rem -1.25rem rgb(0 0 0 / 0.8);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --color-hatch: var(--hatch);
+  --color-cover: var(--cover);
+  --color-cover-deep: var(--cover-deep);
+  --color-on-cover: var(--on-cover);
+  --color-on-cover-muted: var(--on-cover-muted);
+  --color-cover-rule: var(--cover-rule);
+  --color-accent: var(--accent);
+  --color-stamp: var(--stamp);
+  --color-stamp-wash: var(--stamp-wash);
+
+  --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+
+  --shadow-sheet: var(--sheet-shadow);
+
+  /* One easing for the whole system: exponential ease-out. */
+  --ease-press: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-stamp-press: stamp-press 180ms var(--ease-press) both;
+
+  @keyframes stamp-press {
+    from {
+      opacity: 0;
+      filter: blur(2px);
+      transform: rotate(-11deg) scale(1.45);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+      transform: rotate(-5deg) scale(1);
+    }
+  }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+@layer base {
+  html {
+    scrollbar-color: var(--rule) var(--page);
+    /* Keep anchored and focused content clear of the sticky header. */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+    /* Archivo's word space runs tight, most of all in the heavier weights. */
+    word-spacing: 0.08em;
+    caret-color: var(--stamp);
+  }
+
+  p,
+  li,
+  figcaption {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--stamp);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 0.08em;
+  }
+}
+
+@layer components {
+  /* Expanded heavy: titles and the wordmark. */
+  .type-display {
+    font-stretch: 125%;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.04;
+    text-wrap: balance;
+  }
+
+  .type-title {
+    font-stretch: 112%;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    word-spacing: 0.14em;
+    text-wrap: balance;
+  }
+
+  /* Condensed caps: cell labels and stamps. */
+  .type-label {
+    font-stretch: 75%;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 0.07em;
+    line-height: 1.3;
+    word-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .type-figure {
+    font-stretch: 100%;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    word-spacing: 0.16em;
+  }
+
+  /* Focus on the green cover needs the light ring. */
+  .on-cover :focus-visible {
+    outline-color: var(--on-cover);
+  }
+
+  /* A cell we deliberately leave empty. */
+  .cell-empty {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      var(--hatch) 0 1px,
+      transparent 1px 9px
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

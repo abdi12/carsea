@@ -43,3 +43,8 @@ next-env.d.ts
 
 # local tooling
 /.venv
+
+# impeccable working files
+/.impeccable/review
+/.impeccable/questions
+/.impeccable/config.local.json

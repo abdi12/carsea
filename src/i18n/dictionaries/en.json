@@ -1,16 +1,669 @@
 {
+  "common": {
+    "skipToContent": "Skip to content",
+    "home": "Carsea home"
+  },
+  "nav": {
+    "label": "Main navigation",
+    "menu": "Menu",
+    "find": "Find a car",
+    "cars": "Browse cars",
+    "compare": "Compare",
+    "guides": "Guides",
+    "compareCount": "{count} cars in comparison"
+  },
+  "budget": {
+    "legend": "Start with your budget",
+    "hint": "On-the-road price for a new car. Your answer is saved only in this browser.",
+    "options": {
+      "under200": "Under Rp200 million",
+      "200to350": "Rp200–350 million",
+      "350to500": "Rp350–500 million",
+      "over500": "Over Rp500 million"
+    },
+    "selected": "Selected",
+    "continue": "Continue",
+    "continueWithout": "Continue without a budget"
+  },
+  "labels": {
+    "bodyStyles": {
+      "hatchback": "Hatchback",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "mpv": "MPV",
+      "pickup": "Pickup",
+      "van": "Van",
+      "coupe": "Coupe"
+    },
+    "powertrains": {
+      "petrol": "Petrol",
+      "diesel": "Diesel",
+      "hybrid": "Hybrid",
+      "electric": "Electric"
+    },
+    "transmissions": {
+      "manual": "Manual",
+      "automatic": "Automatic",
+      "cvt": "CVT",
+      "dct": "Dual-clutch",
+      "single_speed": "Single-speed"
+    },
+    "facts": {
+      "seats": "Seats",
+      "length_mm": "Length",
+      "width_mm": "Width",
+      "height_mm": "Height",
+      "wheelbase_mm": "Wheelbase",
+      "ground_clearance_mm": "Ground clearance",
+      "cargo_volume_l": "Cargo volume",
+      "engine_displacement_cc": "Engine displacement",
+      "power_kw": "Power",
+      "torque_nm": "Torque",
+      "battery_capacity_kwh": "Battery capacity",
+      "range_km": "Range",
+      "fuel_consumption_km_per_l": "Fuel consumption",
+      "energy_consumption_kwh_per_100km": "Electricity consumption",
+      "energy_type": "Energy type",
+      "service_cost_annual_idr": "Annual service cost",
+      "annual_tax_idr": "Annual tax",
+      "insurance_annual_idr": "Annual insurance"
+    },
+    "units": {
+      "count": "seats",
+      "mm": "mm",
+      "l": "litres",
+      "cc": "cc",
+      "kw": "kW",
+      "nm": "Nm",
+      "kwh": "kWh",
+      "km": "km",
+      "km/l": "km/litre",
+      "kwh/100km": "kWh/100 km",
+      "idr/year": "a year"
+    },
+    "energyTypes": {
+      "petrol_ron90": "Petrol RON 90",
+      "petrol_ron92": "Petrol RON 92",
+      "petrol_ron95": "Petrol RON 95",
+      "petrol_ron98": "Petrol RON 98",
+      "diesel_cn48": "Diesel CN 48",
+      "diesel_cn51": "Diesel CN 51",
+      "diesel_cn53": "Diesel CN 53",
+      "electricity_home": "Home electricity"
+    },
+    "features": {
+      "abs": "ABS brakes",
+      "stability_control": "Stability control",
+      "airbags_front": "Front airbags",
+      "airbags_side_curtain": "Side and curtain airbags",
+      "isofix": "ISOFIX child-seat anchors",
+      "rear_camera": "Rear camera",
+      "autonomous_emergency_braking": "Autonomous emergency braking",
+      "lane_keep_assist": "Lane-keep assist",
+      "blind_spot_monitor": "Blind-spot monitor",
+      "auto_climate": "Automatic climate control",
+      "keyless_entry": "Keyless entry",
+      "cruise_control": "Cruise control",
+      "adaptive_cruise_control": "Adaptive cruise control",
+      "power_driver_seat": "Power driver's seat",
+      "sunroof": "Sunroof",
+      "touchscreen": "Touchscreen",
+      "smartphone_mirroring": "Smartphone mirroring",
+      "third_row_seats": "Third-row seats",
+      "power_tailgate": "Power tailgate",
+      "roof_rails": "Roof rails"
+    },
+    "featureCategories": {
+      "safety": "Safety",
+      "comfort": "Comfort",
+      "infotainment": "Infotainment",
+      "practicality": "Practicality"
+    },
+    "availability": {
+      "standard": "Standard",
+      "optional": "Optional",
+      "unavailable": "Unavailable",
+      "not_applicable": "Not applicable"
+    },
+    "coverage": {
+      "vehicle": "Vehicle warranty",
+      "powertrain": "Powertrain warranty",
+      "battery": "Battery warranty",
+      "corrosion": "Corrosion warranty"
+    },
+    "sourceKinds": {
+      "official": "Official source",
+      "authoritative": "Authoritative source",
+      "computed": "Calculated",
+      "sample": "Sample data"
+    },
+    "warrantyYears": "{count} years"
+  },
+  "price": {
+    "none": "Price not available",
+    "otr": "OTR, Greater Jakarta",
+    "status": {
+      "stale": "needs re-checking",
+      "expired": "no longer valid",
+      "not_yet_valid": "not yet valid"
+    }
+  },
+  "provenance": {
+    "verified": "Verified",
+    "stale": "Needs checking",
+    "sample": "Sample data",
+    "computed": "Calculated",
+    "estimate": "Estimate",
+    "source": "Source:",
+    "checked": "Checked {date}.",
+    "lastChecked": "Last checked {date}; needs re-checking.",
+    "sampleNotice": "This page shows sample data for development. It is not real vehicle data."
+  },
+  "actions": {
+    "compare": "Compare",
+    "compared": "Comparing",
+    "compareAdd": "Add to comparison",
+    "compareRemove": "Remove from comparison",
+    "compareFull": "The comparison already holds three cars. Remove one to add this.",
+    "compareOpen": "Open comparison",
+    "save": "Save",
+    "saved": "Saved",
+    "saveAdd": "Save",
+    "saveRemove": "Remove from saved"
+  },
+  "states": {
+    "loading": "Loading",
+    "storageUnavailable": "This browser does not allow storage. Your choices last while this page is open and will not be saved.",
+    "legalDraft": "Draft. This text describes how Carsea works today and has not had legal review.",
+    "error": {
+      "title": "The data failed to load.",
+      "retry": "Try again"
+    }
+  },
+  "cars": {
+    "title": "Browse cars",
+    "lead": "New passenger cars with Greater Jakarta OTR prices. Filter for yourself without answering any questions.",
+    "coverage": "The catalog holds only variants whose data passes checking, so not every car sold in Indonesia is here.",
+    "count": "{total} variants",
+    "countFiltered": "{shown} of {total} variants match the filters",
+    "seatCount": "{count} seats",
+    "empty": {
+      "title": "The catalog has no cars yet.",
+      "body": "We show a car only after its price and specifications are checked against a source. Meanwhile the buying guides are ready to read.",
+      "action": "Read the guides"
+    },
+    "noMatch": {
+      "title": "No variants match.",
+      "body": "The price and seat filters pass only cars whose data is known. Loosen or clear the filters to see more."
+    },
+    "filters": {
+      "title": "Filter cars",
+      "search": "Search by name",
+      "searchPlaceholder": "Make or model",
+      "price": "Highest price",
+      "any": "Any",
+      "upTo": {
+        "under200": "Up to Rp200 million",
+        "200to350": "Up to Rp350 million",
+        "350to500": "Up to Rp500 million"
+      },
+      "seats": "Fewest seats",
+      "seats5": "5 seats",
+      "seats6": "6 seats or more",
+      "bodyStyle": "Body style",
+      "powertrain": "Powertrain",
+      "clear": "Clear all filters"
+    }
+  },
+  "find": {
+    "title": "Find a car",
+    "lead": "Six short questions. Skip any you are unsure of; answers are saved only in this browser.",
+    "progress": "Question {current} of {total}",
+    "skipped": "Skipped",
+    "back": "Back",
+    "next": "Next",
+    "skip": "Skip",
+    "finish": "Review answers",
+    "toReview": "Go to review",
+    "stepNames": {
+      "budget": "Budget",
+      "seats": "Seats",
+      "uses": "Use",
+      "powertrains": "Powertrain",
+      "priorities": "Priorities",
+      "distance": "Distance"
+    },
+    "budgetStep": {
+      "title": "What is your budget?",
+      "hint": "The highest on-the-road price you are willing to pay. Cars above it are not recommended."
+    },
+    "seats": {
+      "title": "How many people usually ride?",
+      "hint": "Cars known to have fewer seats are not recommended.",
+      "options": {
+        "five": "Up to 5 people",
+        "six_plus": "6 people or more"
+      }
+    },
+    "uses": {
+      "title": "What will the car mostly be used for?",
+      "hint": "Choose all that apply.",
+      "options": {
+        "city": {
+          "label": "Daily city driving",
+          "hint": "Favours shorter cars."
+        },
+        "family_trips": {
+          "label": "Family trips",
+          "hint": "Favours a larger boot."
+        },
+        "rough_roads": {
+          "label": "Rough or flooded roads",
+          "hint": "Favours higher ground clearance."
+        }
+      }
+    },
+    "powertrains": {
+      "title": "Which powertrains would you consider?",
+      "hint": "This is a preference. Other types can still appear, marked as a compromise.",
+      "hints": {
+        "petrol": "A conventional petrol engine.",
+        "diesel": "A diesel engine.",
+        "hybrid": "Petrol assisted by an electric motor; no plugging in.",
+        "electric": "Battery only; needs somewhere to charge."
+      }
+    },
+    "priorities": {
+      "title": "What matters most to you?",
+      "hint": "Choose up to three. These decide the order of recommendations.",
+      "count": "{count} of {max} chosen",
+      "options": {
+        "low_running_cost": {
+          "label": "Low running cost",
+          "hint": "Fuel or electricity per month."
+        },
+        "safety": {
+          "label": "Safety",
+          "hint": "Number of standard safety features."
+        },
+        "comfort": {
+          "label": "Comfort",
+          "hint": "Number of standard comfort features."
+        },
+        "space": {
+          "label": "Boot space",
+          "hint": "Cargo volume."
+        },
+        "warranty": {
+          "label": "Long warranty",
+          "hint": "Length of the vehicle warranty."
+        }
+      }
+    },
+    "distance": {
+      "title": "How far do you drive each month?",
+      "hint": "Used to estimate fuel or electricity cost.",
+      "label": "Distance per month",
+      "unit": "km a month",
+      "value": "{km} km a month",
+      "assumed": "If left empty, we use {km} km a month as a starting assumption."
+    },
+    "review": {
+      "title": "Review your answers",
+      "body": "Change any answer before seeing recommendations. Skipped questions do not limit the results.",
+      "edit": "Change",
+      "region": "Prices used are Greater Jakarta OTR prices.",
+      "clear": "Clear all answers",
+      "submit": "See recommendations"
+    }
+  },
+  "recs": {
+    "title": "Recommendations",
+    "lead": "The cars that best fit your answers, with the reasons and the compromises.",
+    "count": "{count} best-fitting cars",
+    "revise": "Change answers",
+    "browse": "Browse all cars",
+    "view": "View research",
+    "limited": "Fewer than three cars meet your requirements. We do not pad the list with cars that do not fit.",
+    "evidenceMissing": "Some reasons could not be assessed because we do not have the data. Missing data counts neither for nor against a car.",
+    "energy": "Estimated fuel or electricity: {amount} a month at {km} km.",
+    "energyUnknown": "A fuel or electricity estimate is not available for this car.",
+    "excludedTitle": "Not recommended",
+    "excluded": {
+      "no_current_price": "{count} cars with no current price.",
+      "over_budget": "{count} cars above your budget.",
+      "too_few_seats": "{count} cars with fewer seats than you need."
+    },
+    "groups": {
+      "met": "Fits",
+      "unmet": "Compromises",
+      "unknown": "Not yet assessable"
+    },
+    "groupEmpty": {
+      "met": "None.",
+      "unmet": "No compromises.",
+      "unknown": "Everything could be assessed."
+    },
+    "method": "This order follows written rules, with no score and no paid placement.",
+    "methodLink": "Read the rules",
+    "noAnswers": {
+      "title": "No answers yet.",
+      "body": "Recommendations are built from your answers in the car finder. Answers are kept in this browser, so they can disappear if site data is cleared.",
+      "action": "Start the car finder"
+    },
+    "none": {
+      "title": "No cars meet your requirements.",
+      "body": "Raise the budget ceiling or reduce the seat count to see results."
+    },
+    "reasons": {
+      "within_budget": {
+        "met": "Within your budget."
+      },
+      "seats": {
+        "met": "Enough seats.",
+        "unknown": "We do not know the seat count."
+      },
+      "powertrain": {
+        "met": "A powertrain you chose.",
+        "unmet": "Not one of the powertrains you chose."
+      },
+      "body_style": {
+        "met": "A body style you chose.",
+        "unmet": "Not one of the body styles you chose."
+      },
+      "use_city": {
+        "met": "Shorter than most alternatives, easier in the city.",
+        "unmet": "Longer than most alternatives.",
+        "unknown": "Its length could not be compared."
+      },
+      "use_family_trips": {
+        "met": "A larger boot than most alternatives.",
+        "unmet": "A smaller boot than most alternatives.",
+        "unknown": "Its cargo volume could not be compared."
+      },
+      "use_rough_roads": {
+        "met": "Higher ground clearance than most alternatives.",
+        "unmet": "Lower ground clearance than most alternatives.",
+        "unknown": "Its ground clearance could not be compared."
+      },
+      "priority_low_running_cost": {
+        "met": "Lower fuel or electricity cost than most alternatives.",
+        "unmet": "Higher fuel or electricity cost than most alternatives.",
+        "unknown": "Fuel or electricity cost could not be compared."
+      },
+      "priority_safety": {
+        "met": "More standard safety features than most alternatives.",
+        "unmet": "Fewer standard safety features than most alternatives.",
+        "unknown": "Safety features could not be compared."
+      },
+      "priority_comfort": {
+        "met": "More standard comfort features than most alternatives.",
+        "unmet": "Fewer standard comfort features than most alternatives.",
+        "unknown": "Comfort features could not be compared."
+      },
+      "priority_space": {
+        "met": "A larger boot than most alternatives.",
+        "unmet": "A smaller boot than most alternatives.",
+        "unknown": "Its cargo volume could not be compared."
+      },
+      "priority_warranty": {
+        "met": "A longer warranty than most alternatives.",
+        "unmet": "A shorter warranty than most alternatives.",
+        "unknown": "The warranty could not be compared."
+      }
+    }
+  },
+  "cost": {
+    "distanceLabel": "Distance per month",
+    "distanceUnit": "km a month",
+    "distanceHint": "Change this to match your driving. Only the fuel or electricity cost changes with it.",
+    "components": {
+      "energy": "Fuel or electricity",
+      "servicing": "Scheduled servicing",
+      "tax": "Annual tax",
+      "insurance": "Insurance"
+    },
+    "inputs": {
+      "consumption": "the car's consumption",
+      "energy_type": "the fuel or electricity type",
+      "energy_price": "the fuel or electricity price",
+      "service_cost_annual": "the annual service cost",
+      "annual_tax": "the annual tax",
+      "insurance_annual": "the insurance premium"
+    },
+    "basis": {
+      "energy": "Distance, the car's consumption, and the energy price.",
+      "servicing": "Annual service cost divided by twelve.",
+      "tax": "Annual tax divided by twelve.",
+      "insurance": "Annual premium divided by twelve."
+    },
+    "unavailable": "Not available",
+    "missing": "No source yet for {inputs}.",
+    "perMonth": "a month",
+    "total": "Estimated total: {amount} a month",
+    "subtotal": "Subtotal of {count} of 4 components: {amount} a month",
+    "excludes": "Not included: {components}.",
+    "disclaimer": "This is an estimate, not a quote or a bill. Purchase price, instalments, interest, and depreciation are not included.",
+    "methodLink": "How it is calculated"
+  },
+  "compare": {
+    "title": "Compare",
+    "lead": "Two or three variants side by side. Missing, old, and non-applicable data is stated plainly.",
+    "caption": "Variant comparison",
+    "count": "{count} of {max} cars",
+    "addAnother": "Add a car",
+    "clear": "Clear comparison",
+    "remove": "Remove",
+    "needTwo": "Add at least one more car to compare.",
+    "mixedYears": "These cars are from different model years. Equipment and prices can change between model years.",
+    "unknown": "Unknown",
+    "notApplicable": "Not applicable",
+    "loadError": "Data for the cars you chose could not be fetched. Your selection is still saved.",
+    "browse": "Browse cars",
+    "toRecs": "Back to recommendations",
+    "gone": "{count} of the cars you chose are no longer in the catalog.",
+    "partialTotal": "{amount} ({count} of 4 components)",
+    "centreCount": "{count} authorized centres",
+    "empty": {
+      "title": "No cars to compare yet.",
+      "body": "Choose Compare on two or three cars in the car list or in your recommendations."
+    },
+    "groups": {
+      "identity": "Variant",
+      "price": "Price",
+      "cost": "Cost per month at {km} km",
+      "specs": "Specifications",
+      "features": "Equipment",
+      "support": "Warranty and after-sales"
+    },
+    "rows": {
+      "modelYear": "Model year",
+      "bodyStyle": "Body style",
+      "powertrain": "Powertrain",
+      "transmission": "Transmission",
+      "price": "OTR price",
+      "priceChecked": "Price checked",
+      "costTotal": "Total",
+      "serviceCentres": "Authorized centres in Greater Jakarta"
+    },
+    "saved": {
+      "title": "Saved cars",
+      "body": "This list is kept in your browser, with no account. It is not sent to us.",
+      "empty": "No saved cars yet. Choose Save on any car.",
+      "clear": "Clear all saved cars"
+    }
+  },
+  "detail": {
+    "description": "Price, equipment, cost estimate, and warranty, with sources and checking dates.",
+    "back": "All cars",
+    "price": {
+      "title": "Price",
+      "validFrom": "Valid from {from}.",
+      "validRange": "Valid {from} to {until}.",
+      "noInclusions": "The source does not itemise what is included.",
+      "none": "We do not yet have a price from a source we can check. This car will not be recommended until it has one."
+    },
+    "specs": {
+      "title": "Specifications",
+      "none": "No checked specifications for this variant yet."
+    },
+    "features": {
+      "title": "What you get for this price",
+      "body": "Only standard features are included in this variant's price. Features we do not know about are counted as neither present nor absent.",
+      "standardCount": "{count} standard features",
+      "unknown": "Unknown"
+    },
+    "cost": {
+      "title": "Estimated monthly cost",
+      "body": "Four components, each on its own. The purchase price is not part of this."
+    },
+    "support": {
+      "title": "Warranty and after-sales",
+      "noWarranty": "No checked warranty terms for this variant yet.",
+      "centres": "Our list has {count} authorized {make} centres in Greater Jakarta.",
+      "noCentres": "We have no authorized {make} centres in our list yet.",
+      "centresLink": "See service centres"
+    },
+    "sources": {
+      "title": "Sources",
+      "retrieved": "retrieved {date}"
+    }
+  },
+  "guides": {
+    "title": "Buying guides",
+    "lead": "Short guides to budget, OTR price, features, monthly cost, and warranty.",
+    "note": "These guides give general explanation, not facts about a particular car.",
+    "back": "All guides",
+    "updated": "Updated {date}."
+  },
+  "service": {
+    "title": "Service centres",
+    "lead": "Authorized service centres in Greater Jakarta, with source and checking date.",
+    "coverage": "This list holds only centres we have checked. Confirm the address and opening hours with the centre before you go.",
+    "search": "Search by name, city, or address",
+    "searchPlaceholder": "For example Bekasi",
+    "make": "Make",
+    "allMakes": "All makes",
+    "count": "{shown} of {total} centres",
+    "clear": "Clear search",
+    "phone": "Phone",
+    "hours": "Opening hours",
+    "notVerified": "not yet checked",
+    "noMatch": {
+      "title": "No centres match.",
+      "body": "Try another city name or choose all makes."
+    },
+    "empty": {
+      "title": "The service centre list is not available yet.",
+      "body": "We list a centre only after its address is checked against an official source.",
+      "action": "Read the warranty guide"
+    }
+  },
   "meta": {
     "title": "Carsea — Independent new-car research",
-    "description": "Carsea helps you research and compare new passenger cars in Indonesia before you buy."
-  },
-  "home": {
-    "heading": "Carsea",
-    "lead": "Independent research for choosing a new car in Indonesia.",
-    "status": "This site is under construction. The catalog and finder are not available yet."
+    "description": "Carsea helps you research and compare new passenger cars in Indonesia before you buy, with no paid placement."
   },
   "localeSwitch": {
     "label": "Language",
     "id": "Bahasa Indonesia",
     "en": "English"
+  },
+  "theme": {
+    "toDark": "Switch to dark theme",
+    "toLight": "Switch to light theme"
+  },
+  "stamps": {
+    "verified": "Verified",
+    "estimate": "Estimate",
+    "stale": "Needs checking",
+    "missing": "Empty"
+  },
+  "footer": {
+    "label": "More links",
+    "tagline": "Independent research for new cars in Indonesia.",
+    "howWeCompare": "How Carsea compares",
+    "serviceCentres": "Service centres",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "home": {
+    "heading": "Choose a new car on reasons, not adverts.",
+    "lead": "Carsea is independent research for new-car buyers in Indonesia. We explain why a car fits you, what you give up, and where every fact comes from.",
+    "browse": {
+      "heading": "Already know what you want?",
+      "body": "Skip the questions and filter by price, body style, and powertrain yourself.",
+      "action": "Browse cars"
+    },
+    "facts": {
+      "heading": "Every fact carries its source stamp and date.",
+      "body": "A checked price does not mean every specification was checked. So Carsea records each fact in its own cell, and says plainly which are verified, which are estimates, which are old, and which we do not have.",
+      "caption": "An illustration of how Carsea records facts. This is not real vehicle data.",
+      "vehicle": "Sample Car 1.5 CVT",
+      "cells": {
+        "price": {
+          "label": "Jakarta OTR price",
+          "value": "Rp300,000,000",
+          "note": "Source: official price list. Checked 12 Sep 2026."
+        },
+        "service": {
+          "label": "Scheduled servicing per month",
+          "value": "Rp450,000",
+          "note": "Calculated from the official service schedule and your distance."
+        },
+        "warranty": {
+          "label": "Warranty",
+          "value": "3 years / 100,000 km",
+          "note": "Last checked 2 Jan 2026. Needs re-checking."
+        },
+        "insurance": {
+          "label": "Insurance per month",
+          "value": "Not available",
+          "note": "We do not fill in a figure we cannot support with a source."
+        }
+      }
+    },
+    "independence": {
+      "heading": "Nobody pays to appear here.",
+      "points": [
+        {
+          "title": "No paid placement",
+          "body": "No sponsors, no manufacturer adverts, and no ranking that can be bought."
+        },
+        {
+          "title": "No selling your contact",
+          "body": "Carsea does not ask for your name or phone number and does not pass you to a dealer."
+        },
+        {
+          "title": "Rules you can read",
+          "body": "Recommendations are ordered by written rules applied to your answers, not a hidden score."
+        }
+      ],
+      "action": "How Carsea compares"
+    },
+    "topics": {
+      "heading": "What you can research",
+      "items": [
+        {
+          "title": "Budget and OTR price",
+          "body": "What a Jakarta on-the-road price includes, and what it leaves out."
+        },
+        {
+          "title": "Features for the price",
+          "body": "Each variant's standard equipment, set against that variant's price."
+        },
+        {
+          "title": "Monthly ownership cost",
+          "body": "Fuel or electricity, servicing, tax, and insurance, each shown separately."
+        },
+        {
+          "title": "Warranty and authorized service",
+          "body": "Warranty terms and authorized service centres in Greater Jakarta."
+        }
+      ]
+    },
+    "close": {
+      "heading": "First coverage: Greater Jakarta.",
+      "body": "The prices and service centres we show apply to Greater Jakarta. The catalog holds only cars whose data passes checking, so not every car is here."
+    }
   }
 }

@@ -1,16 +1,669 @@
 {
+  "common": {
+    "skipToContent": "Langsung ke konten",
+    "home": "Beranda Carsea"
+  },
+  "nav": {
+    "label": "Navigasi utama",
+    "menu": "Menu",
+    "find": "Cari mobil",
+    "cars": "Jelajahi mobil",
+    "compare": "Bandingkan",
+    "guides": "Panduan",
+    "compareCount": "{count} mobil dalam perbandingan"
+  },
+  "budget": {
+    "legend": "Mulai dari anggaran Anda",
+    "hint": "Harga on-the-road untuk mobil baru. Jawaban disimpan hanya di peramban ini.",
+    "options": {
+      "under200": "Di bawah Rp200 juta",
+      "200to350": "Rp200–350 juta",
+      "350to500": "Rp350–500 juta",
+      "over500": "Di atas Rp500 juta"
+    },
+    "selected": "Dipilih",
+    "continue": "Lanjutkan",
+    "continueWithout": "Lanjut tanpa anggaran"
+  },
+  "labels": {
+    "bodyStyles": {
+      "hatchback": "Hatchback",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "mpv": "MPV",
+      "pickup": "Pikap",
+      "van": "Van",
+      "coupe": "Coupe"
+    },
+    "powertrains": {
+      "petrol": "Bensin",
+      "diesel": "Diesel",
+      "hybrid": "Hybrid",
+      "electric": "Listrik"
+    },
+    "transmissions": {
+      "manual": "Manual",
+      "automatic": "Otomatis",
+      "cvt": "CVT",
+      "dct": "Kopling ganda",
+      "single_speed": "Satu percepatan"
+    },
+    "facts": {
+      "seats": "Jumlah kursi",
+      "length_mm": "Panjang",
+      "width_mm": "Lebar",
+      "height_mm": "Tinggi",
+      "wheelbase_mm": "Jarak sumbu roda",
+      "ground_clearance_mm": "Jarak ke tanah",
+      "cargo_volume_l": "Volume bagasi",
+      "engine_displacement_cc": "Kapasitas mesin",
+      "power_kw": "Tenaga",
+      "torque_nm": "Torsi",
+      "battery_capacity_kwh": "Kapasitas baterai",
+      "range_km": "Jarak tempuh",
+      "fuel_consumption_km_per_l": "Konsumsi BBM",
+      "energy_consumption_kwh_per_100km": "Konsumsi listrik",
+      "energy_type": "Jenis energi",
+      "service_cost_annual_idr": "Biaya servis tahunan",
+      "annual_tax_idr": "Pajak tahunan",
+      "insurance_annual_idr": "Asuransi tahunan"
+    },
+    "units": {
+      "count": "kursi",
+      "mm": "mm",
+      "l": "liter",
+      "cc": "cc",
+      "kw": "kW",
+      "nm": "Nm",
+      "kwh": "kWh",
+      "km": "km",
+      "km/l": "km/liter",
+      "kwh/100km": "kWh/100 km",
+      "idr/year": "per tahun"
+    },
+    "energyTypes": {
+      "petrol_ron90": "Bensin RON 90",
+      "petrol_ron92": "Bensin RON 92",
+      "petrol_ron95": "Bensin RON 95",
+      "petrol_ron98": "Bensin RON 98",
+      "diesel_cn48": "Solar CN 48",
+      "diesel_cn51": "Solar CN 51",
+      "diesel_cn53": "Solar CN 53",
+      "electricity_home": "Listrik rumah"
+    },
+    "features": {
+      "abs": "Rem ABS",
+      "stability_control": "Kontrol stabilitas",
+      "airbags_front": "Airbag depan",
+      "airbags_side_curtain": "Airbag samping dan tirai",
+      "isofix": "Pengait kursi anak ISOFIX",
+      "rear_camera": "Kamera mundur",
+      "autonomous_emergency_braking": "Pengereman darurat otomatis",
+      "lane_keep_assist": "Bantuan jaga lajur",
+      "blind_spot_monitor": "Pemantau titik buta",
+      "auto_climate": "AC otomatis",
+      "keyless_entry": "Kunci tanpa anak kunci",
+      "cruise_control": "Cruise control",
+      "adaptive_cruise_control": "Cruise control adaptif",
+      "power_driver_seat": "Kursi pengemudi elektrik",
+      "sunroof": "Sunroof",
+      "touchscreen": "Layar sentuh",
+      "smartphone_mirroring": "Koneksi layar ponsel",
+      "third_row_seats": "Kursi baris ketiga",
+      "power_tailgate": "Pintu bagasi elektrik",
+      "roof_rails": "Rel atap"
+    },
+    "featureCategories": {
+      "safety": "Keselamatan",
+      "comfort": "Kenyamanan",
+      "infotainment": "Hiburan dan konektivitas",
+      "practicality": "Kepraktisan"
+    },
+    "availability": {
+      "standard": "Standar",
+      "optional": "Opsional",
+      "unavailable": "Tidak tersedia",
+      "not_applicable": "Tidak berlaku"
+    },
+    "coverage": {
+      "vehicle": "Garansi kendaraan",
+      "powertrain": "Garansi mesin dan transmisi",
+      "battery": "Garansi baterai",
+      "corrosion": "Garansi karat"
+    },
+    "sourceKinds": {
+      "official": "Sumber resmi",
+      "authoritative": "Sumber tepercaya",
+      "computed": "Hasil perhitungan",
+      "sample": "Data contoh"
+    },
+    "warrantyYears": "{count} tahun"
+  },
+  "price": {
+    "none": "Harga belum tersedia",
+    "otr": "OTR Jakarta dan sekitarnya",
+    "status": {
+      "stale": "perlu diperiksa ulang",
+      "expired": "masa berlaku habis",
+      "not_yet_valid": "belum berlaku"
+    }
+  },
+  "provenance": {
+    "verified": "Terverifikasi",
+    "stale": "Perlu diperiksa",
+    "sample": "Data contoh",
+    "computed": "Dihitung",
+    "estimate": "Perkiraan",
+    "source": "Sumber:",
+    "checked": "Diperiksa {date}.",
+    "lastChecked": "Terakhir diperiksa {date}; perlu diperiksa ulang.",
+    "sampleNotice": "Halaman ini menampilkan data contoh untuk pengembangan. Ini bukan data kendaraan nyata."
+  },
+  "actions": {
+    "compare": "Bandingkan",
+    "compared": "Dibandingkan",
+    "compareAdd": "Tambahkan ke perbandingan",
+    "compareRemove": "Keluarkan dari perbandingan",
+    "compareFull": "Perbandingan sudah berisi tiga mobil. Keluarkan satu untuk menambah yang ini.",
+    "compareOpen": "Buka perbandingan",
+    "save": "Simpan",
+    "saved": "Tersimpan",
+    "saveAdd": "Simpan",
+    "saveRemove": "Hapus dari tersimpan"
+  },
+  "states": {
+    "loading": "Memuat",
+    "storageUnavailable": "Peramban ini tidak mengizinkan penyimpanan. Pilihan Anda berlaku selama halaman ini terbuka dan tidak akan tersimpan.",
+    "legalDraft": "Draf. Teks ini menjelaskan cara kerja Carsea saat ini dan belum ditinjau secara hukum.",
+    "error": {
+      "title": "Data gagal dimuat.",
+      "retry": "Coba lagi"
+    }
+  },
+  "cars": {
+    "title": "Jelajahi mobil",
+    "lead": "Mobil penumpang baru dengan harga OTR Jakarta dan sekitarnya. Saring sendiri tanpa menjawab pertanyaan.",
+    "coverage": "Katalog hanya memuat varian yang datanya lolos pemeriksaan, sehingga tidak semua mobil yang dijual di Indonesia ada di sini.",
+    "count": "{total} varian",
+    "countFiltered": "{shown} dari {total} varian cocok dengan saringan",
+    "seatCount": "{count} kursi",
+    "empty": {
+      "title": "Katalog belum berisi mobil.",
+      "body": "Kami hanya menampilkan mobil setelah harga dan spesifikasinya diperiksa terhadap sumber. Sementara itu, panduan membeli sudah bisa dibaca.",
+      "action": "Baca panduan"
+    },
+    "noMatch": {
+      "title": "Tidak ada varian yang cocok.",
+      "body": "Saringan harga dan kursi hanya meloloskan mobil yang datanya sudah diketahui. Longgarkan atau hapus saringan untuk melihat lebih banyak."
+    },
+    "filters": {
+      "title": "Saring mobil",
+      "search": "Cari nama",
+      "searchPlaceholder": "Merek atau model",
+      "price": "Harga paling tinggi",
+      "any": "Semua",
+      "upTo": {
+        "under200": "Sampai Rp200 juta",
+        "200to350": "Sampai Rp350 juta",
+        "350to500": "Sampai Rp500 juta"
+      },
+      "seats": "Kursi paling sedikit",
+      "seats5": "5 kursi",
+      "seats6": "6 kursi atau lebih",
+      "bodyStyle": "Tipe bodi",
+      "powertrain": "Jenis mesin",
+      "clear": "Hapus semua saringan"
+    }
+  },
+  "find": {
+    "title": "Cari mobil",
+    "lead": "Enam pertanyaan singkat. Lewati yang belum Anda ketahui; jawaban hanya disimpan di peramban ini.",
+    "progress": "Pertanyaan {current} dari {total}",
+    "skipped": "Dilewati",
+    "back": "Kembali",
+    "next": "Berikutnya",
+    "skip": "Lewati",
+    "finish": "Tinjau jawaban",
+    "toReview": "Ke tinjauan",
+    "stepNames": {
+      "budget": "Anggaran",
+      "seats": "Kursi",
+      "uses": "Penggunaan",
+      "powertrains": "Jenis mesin",
+      "priorities": "Prioritas",
+      "distance": "Jarak tempuh"
+    },
+    "budgetStep": {
+      "title": "Berapa anggaran Anda?",
+      "hint": "Harga on-the-road tertinggi yang bersedia Anda bayar. Mobil di atas batas ini tidak direkomendasikan."
+    },
+    "seats": {
+      "title": "Berapa orang yang biasanya ikut?",
+      "hint": "Mobil yang diketahui berkursi lebih sedikit tidak direkomendasikan.",
+      "options": {
+        "five": "Sampai 5 orang",
+        "six_plus": "6 orang atau lebih"
+      }
+    },
+    "uses": {
+      "title": "Untuk apa mobil ini paling sering dipakai?",
+      "hint": "Pilih semua yang sesuai.",
+      "options": {
+        "city": {
+          "label": "Harian di kota",
+          "hint": "Mengutamakan mobil yang lebih pendek."
+        },
+        "family_trips": {
+          "label": "Perjalanan keluarga",
+          "hint": "Mengutamakan bagasi yang lebih besar."
+        },
+        "rough_roads": {
+          "label": "Jalan rusak atau banjir",
+          "hint": "Mengutamakan jarak ke tanah yang lebih tinggi."
+        }
+      }
+    },
+    "powertrains": {
+      "title": "Jenis mesin apa yang Anda pertimbangkan?",
+      "hint": "Ini preferensi. Jenis lain tetap bisa muncul dan ditandai sebagai kompromi.",
+      "hints": {
+        "petrol": "Mesin bensin biasa.",
+        "diesel": "Mesin diesel.",
+        "hybrid": "Bensin dibantu motor listrik; tidak perlu dicas.",
+        "electric": "Baterai saja; perlu tempat mengecas."
+      }
+    },
+    "priorities": {
+      "title": "Apa yang paling penting bagi Anda?",
+      "hint": "Pilih paling banyak tiga. Prioritas ini menentukan urutan rekomendasi.",
+      "count": "{count} dari {max} dipilih",
+      "options": {
+        "low_running_cost": {
+          "label": "Biaya jalan rendah",
+          "hint": "BBM atau listrik per bulan."
+        },
+        "safety": {
+          "label": "Keselamatan",
+          "hint": "Jumlah fitur keselamatan standar."
+        },
+        "comfort": {
+          "label": "Kenyamanan",
+          "hint": "Jumlah fitur kenyamanan standar."
+        },
+        "space": {
+          "label": "Ruang bagasi",
+          "hint": "Volume bagasi."
+        },
+        "warranty": {
+          "label": "Garansi panjang",
+          "hint": "Lama garansi kendaraan."
+        }
+      }
+    },
+    "distance": {
+      "title": "Berapa jauh Anda berkendara per bulan?",
+      "hint": "Dipakai untuk memperkirakan biaya BBM atau listrik.",
+      "label": "Jarak per bulan",
+      "unit": "km per bulan",
+      "value": "{km} km per bulan",
+      "assumed": "Jika dikosongkan, kami memakai {km} km per bulan sebagai asumsi awal."
+    },
+    "review": {
+      "title": "Tinjau jawaban Anda",
+      "body": "Ubah jawaban mana pun sebelum melihat rekomendasi. Pertanyaan yang dilewati tidak membatasi hasil.",
+      "edit": "Ubah",
+      "region": "Harga yang dipakai adalah harga OTR Jakarta dan sekitarnya.",
+      "clear": "Hapus semua jawaban",
+      "submit": "Lihat rekomendasi"
+    }
+  },
+  "recs": {
+    "title": "Rekomendasi",
+    "lead": "Mobil yang paling cocok dengan jawaban Anda, dengan alasan dan komprominya.",
+    "count": "{count} mobil paling cocok",
+    "revise": "Ubah jawaban",
+    "browse": "Jelajahi semua mobil",
+    "view": "Lihat riset",
+    "limited": "Kurang dari tiga mobil memenuhi syarat Anda. Kami tidak menambah mobil yang tidak cocok untuk memenuhi daftar.",
+    "evidenceMissing": "Sebagian alasan belum bisa dinilai karena datanya belum kami miliki. Data yang kosong tidak dihitung sebagai kelebihan maupun kekurangan.",
+    "energy": "Perkiraan BBM atau listrik: {amount} per bulan pada {km} km.",
+    "energyUnknown": "Perkiraan BBM atau listrik belum tersedia untuk mobil ini.",
+    "excludedTitle": "Yang tidak direkomendasikan",
+    "excluded": {
+      "no_current_price": "{count} mobil tanpa harga yang masih berlaku.",
+      "over_budget": "{count} mobil di atas anggaran Anda.",
+      "too_few_seats": "{count} mobil dengan kursi lebih sedikit dari kebutuhan Anda."
+    },
+    "groups": {
+      "met": "Cocok",
+      "unmet": "Kompromi",
+      "unknown": "Belum bisa dinilai"
+    },
+    "groupEmpty": {
+      "met": "Tidak ada.",
+      "unmet": "Tidak ada kompromi.",
+      "unknown": "Semua bisa dinilai."
+    },
+    "method": "Urutan ini mengikuti aturan tertulis, tanpa skor dan tanpa penempatan berbayar.",
+    "methodLink": "Baca aturannya",
+    "noAnswers": {
+      "title": "Belum ada jawaban.",
+      "body": "Rekomendasi dibuat dari jawaban Anda di pencari mobil. Jawaban disimpan di peramban ini, jadi bisa hilang jika data situs dihapus.",
+      "action": "Mulai pencari mobil"
+    },
+    "none": {
+      "title": "Tidak ada mobil yang memenuhi syarat Anda.",
+      "body": "Naikkan batas anggaran atau kurangi jumlah kursi untuk melihat hasil."
+    },
+    "reasons": {
+      "within_budget": {
+        "met": "Dalam anggaran Anda."
+      },
+      "seats": {
+        "met": "Kursinya cukup.",
+        "unknown": "Jumlah kursi belum kami ketahui."
+      },
+      "powertrain": {
+        "met": "Jenis mesin sesuai pilihan Anda.",
+        "unmet": "Jenis mesin di luar pilihan Anda."
+      },
+      "body_style": {
+        "met": "Tipe bodi sesuai pilihan Anda.",
+        "unmet": "Tipe bodi di luar pilihan Anda."
+      },
+      "use_city": {
+        "met": "Lebih pendek dari kebanyakan pilihan lain, lebih mudah di kota.",
+        "unmet": "Lebih panjang dari kebanyakan pilihan lain.",
+        "unknown": "Panjang mobil belum bisa dibandingkan."
+      },
+      "use_family_trips": {
+        "met": "Bagasi lebih besar dari kebanyakan pilihan lain.",
+        "unmet": "Bagasi lebih kecil dari kebanyakan pilihan lain.",
+        "unknown": "Volume bagasi belum bisa dibandingkan."
+      },
+      "use_rough_roads": {
+        "met": "Jarak ke tanah lebih tinggi dari kebanyakan pilihan lain.",
+        "unmet": "Jarak ke tanah lebih rendah dari kebanyakan pilihan lain.",
+        "unknown": "Jarak ke tanah belum bisa dibandingkan."
+      },
+      "priority_low_running_cost": {
+        "met": "Biaya BBM atau listrik lebih rendah dari kebanyakan pilihan lain.",
+        "unmet": "Biaya BBM atau listrik lebih tinggi dari kebanyakan pilihan lain.",
+        "unknown": "Biaya BBM atau listrik belum bisa dibandingkan."
+      },
+      "priority_safety": {
+        "met": "Fitur keselamatan standar lebih banyak dari kebanyakan pilihan lain.",
+        "unmet": "Fitur keselamatan standar lebih sedikit dari kebanyakan pilihan lain.",
+        "unknown": "Fitur keselamatan belum bisa dibandingkan."
+      },
+      "priority_comfort": {
+        "met": "Fitur kenyamanan standar lebih banyak dari kebanyakan pilihan lain.",
+        "unmet": "Fitur kenyamanan standar lebih sedikit dari kebanyakan pilihan lain.",
+        "unknown": "Fitur kenyamanan belum bisa dibandingkan."
+      },
+      "priority_space": {
+        "met": "Bagasi lebih besar dari kebanyakan pilihan lain.",
+        "unmet": "Bagasi lebih kecil dari kebanyakan pilihan lain.",
+        "unknown": "Volume bagasi belum bisa dibandingkan."
+      },
+      "priority_warranty": {
+        "met": "Garansi lebih panjang dari kebanyakan pilihan lain.",
+        "unmet": "Garansi lebih pendek dari kebanyakan pilihan lain.",
+        "unknown": "Garansi belum bisa dibandingkan."
+      }
+    }
+  },
+  "cost": {
+    "distanceLabel": "Jarak per bulan",
+    "distanceUnit": "km per bulan",
+    "distanceHint": "Ubah angka ini sesuai pemakaian Anda. Hanya biaya BBM atau listrik yang ikut berubah.",
+    "components": {
+      "energy": "BBM atau listrik",
+      "servicing": "Servis berkala",
+      "tax": "Pajak tahunan",
+      "insurance": "Asuransi"
+    },
+    "inputs": {
+      "consumption": "konsumsi kendaraan",
+      "energy_type": "jenis BBM atau listrik",
+      "energy_price": "harga BBM atau listrik",
+      "service_cost_annual": "biaya servis tahunan",
+      "annual_tax": "pajak tahunan",
+      "insurance_annual": "premi asuransi"
+    },
+    "basis": {
+      "energy": "Jarak, konsumsi kendaraan, dan harga energi.",
+      "servicing": "Biaya servis tahunan dibagi dua belas.",
+      "tax": "Pajak tahunan dibagi dua belas.",
+      "insurance": "Premi tahunan dibagi dua belas."
+    },
+    "unavailable": "Belum tersedia",
+    "missing": "Belum ada sumber untuk {inputs}.",
+    "perMonth": "per bulan",
+    "total": "Perkiraan total: {amount} per bulan",
+    "subtotal": "Subtotal {count} dari 4 komponen: {amount} per bulan",
+    "excludes": "Tidak termasuk: {components}.",
+    "disclaimer": "Ini perkiraan, bukan penawaran atau tagihan. Harga beli, cicilan, bunga, dan penyusutan tidak termasuk.",
+    "methodLink": "Cara menghitungnya"
+  },
+  "compare": {
+    "title": "Bandingkan",
+    "lead": "Dua atau tiga varian berdampingan. Data yang kosong, lama, atau tidak berlaku disebutkan dengan jelas.",
+    "caption": "Perbandingan varian",
+    "count": "{count} dari {max} mobil",
+    "addAnother": "Tambah mobil",
+    "clear": "Kosongkan perbandingan",
+    "remove": "Keluarkan",
+    "needTwo": "Tambahkan setidaknya satu mobil lagi untuk membandingkan.",
+    "mixedYears": "Mobil-mobil ini berbeda tahun model. Perlengkapan dan harga bisa berubah antar tahun model.",
+    "unknown": "Belum diketahui",
+    "notApplicable": "Tidak berlaku",
+    "loadError": "Data mobil yang Anda pilih tidak bisa diambil. Pilihan Anda masih tersimpan.",
+    "browse": "Jelajahi mobil",
+    "toRecs": "Kembali ke rekomendasi",
+    "gone": "{count} mobil yang Anda pilih sudah tidak ada di katalog.",
+    "partialTotal": "{amount} ({count} dari 4 komponen)",
+    "centreCount": "{count} bengkel resmi",
+    "empty": {
+      "title": "Belum ada mobil untuk dibandingkan.",
+      "body": "Pilih Bandingkan pada dua atau tiga mobil di daftar mobil atau di rekomendasi Anda."
+    },
+    "groups": {
+      "identity": "Varian",
+      "price": "Harga",
+      "cost": "Biaya per bulan pada {km} km",
+      "specs": "Spesifikasi",
+      "features": "Perlengkapan",
+      "support": "Garansi dan purnajual"
+    },
+    "rows": {
+      "modelYear": "Tahun model",
+      "bodyStyle": "Tipe bodi",
+      "powertrain": "Jenis mesin",
+      "transmission": "Transmisi",
+      "price": "Harga OTR",
+      "priceChecked": "Harga diperiksa",
+      "costTotal": "Jumlah",
+      "serviceCentres": "Bengkel resmi di Jakarta dan sekitarnya"
+    },
+    "saved": {
+      "title": "Mobil tersimpan",
+      "body": "Daftar ini disimpan di peramban Anda, tanpa akun. Daftar ini tidak dikirim kepada kami.",
+      "empty": "Belum ada mobil tersimpan. Pilih Simpan pada mobil mana pun.",
+      "clear": "Hapus semua mobil tersimpan"
+    }
+  },
+  "detail": {
+    "description": "Harga, perlengkapan, perkiraan biaya, dan garansi, dengan sumber dan tanggal pemeriksaan.",
+    "back": "Semua mobil",
+    "price": {
+      "title": "Harga",
+      "validFrom": "Berlaku sejak {from}.",
+      "validRange": "Berlaku {from} sampai {until}.",
+      "noInclusions": "Sumber tidak merinci apa saja yang termasuk.",
+      "none": "Kami belum memiliki harga dari sumber yang bisa diperiksa. Mobil ini tidak akan direkomendasikan sampai harganya ada."
+    },
+    "specs": {
+      "title": "Spesifikasi",
+      "none": "Belum ada spesifikasi yang diperiksa untuk varian ini."
+    },
+    "features": {
+      "title": "Yang Anda dapat untuk harga ini",
+      "body": "Hanya fitur standar yang termasuk dalam harga varian ini. Fitur yang belum kami ketahui tidak dihitung sebagai ada maupun tidak ada.",
+      "standardCount": "{count} fitur standar",
+      "unknown": "Belum diketahui"
+    },
+    "cost": {
+      "title": "Perkiraan biaya bulanan",
+      "body": "Empat komponen, masing-masing terpisah. Harga beli tidak termasuk di sini."
+    },
+    "support": {
+      "title": "Garansi dan purnajual",
+      "noWarranty": "Belum ada syarat garansi yang diperiksa untuk varian ini.",
+      "centres": "Ada {count} bengkel resmi {make} di Jakarta dan sekitarnya dalam daftar kami.",
+      "noCentres": "Kami belum memiliki bengkel resmi {make} dalam daftar.",
+      "centresLink": "Lihat bengkel resmi"
+    },
+    "sources": {
+      "title": "Sumber",
+      "retrieved": "diambil {date}"
+    }
+  },
+  "guides": {
+    "title": "Panduan membeli",
+    "lead": "Panduan singkat tentang anggaran, harga OTR, fitur, biaya bulanan, dan garansi.",
+    "note": "Panduan ini berisi penjelasan umum, bukan fakta tentang mobil tertentu.",
+    "back": "Semua panduan",
+    "updated": "Diperbarui {date}."
+  },
+  "service": {
+    "title": "Bengkel resmi",
+    "lead": "Bengkel resmi di Jakarta dan sekitarnya, dengan sumber dan tanggal pemeriksaan.",
+    "coverage": "Daftar ini hanya memuat bengkel yang sudah kami periksa. Konfirmasikan alamat dan jam buka kepada bengkel sebelum datang.",
+    "search": "Cari nama, kota, atau alamat",
+    "searchPlaceholder": "Misalnya Bekasi",
+    "make": "Merek",
+    "allMakes": "Semua merek",
+    "count": "{shown} dari {total} bengkel",
+    "clear": "Hapus pencarian",
+    "phone": "Telepon",
+    "hours": "Jam buka",
+    "notVerified": "belum diperiksa",
+    "noMatch": {
+      "title": "Tidak ada bengkel yang cocok.",
+      "body": "Coba nama kota lain atau pilih semua merek."
+    },
+    "empty": {
+      "title": "Daftar bengkel belum tersedia.",
+      "body": "Kami hanya mencantumkan bengkel setelah alamatnya diperiksa terhadap sumber resmi.",
+      "action": "Baca panduan garansi"
+    }
+  },
   "meta": {
     "title": "Carsea — Riset mobil baru yang independen",
-    "description": "Carsea membantu Anda meneliti dan membandingkan mobil penumpang baru di Indonesia sebelum membeli."
-  },
-  "home": {
-    "heading": "Carsea",
-    "lead": "Riset independen untuk memilih mobil baru di Indonesia.",
-    "status": "Situs ini sedang dibangun. Katalog dan fitur pencarian belum tersedia."
+    "description": "Carsea membantu Anda meneliti dan membandingkan mobil penumpang baru di Indonesia sebelum membeli, tanpa penempatan berbayar."
   },
   "localeSwitch": {
     "label": "Bahasa",
     "id": "Bahasa Indonesia",
     "en": "English"
+  },
+  "theme": {
+    "toDark": "Ganti ke tema gelap",
+    "toLight": "Ganti ke tema terang"
+  },
+  "stamps": {
+    "verified": "Terverifikasi",
+    "estimate": "Perkiraan",
+    "stale": "Perlu diperiksa",
+    "missing": "Kosong"
+  },
+  "footer": {
+    "label": "Tautan lain",
+    "tagline": "Riset independen untuk mobil baru di Indonesia.",
+    "howWeCompare": "Cara Carsea membandingkan",
+    "serviceCentres": "Bengkel resmi",
+    "privacy": "Privasi",
+    "terms": "Ketentuan"
+  },
+  "home": {
+    "heading": "Pilih mobil baru dengan alasan, bukan iklan.",
+    "lead": "Carsea adalah riset independen untuk pembeli mobil baru di Indonesia. Kami menjelaskan mengapa sebuah mobil cocok untuk Anda, apa komprominya, dan dari mana setiap faktanya berasal.",
+    "browse": {
+      "heading": "Sudah tahu yang dicari?",
+      "body": "Lewati pertanyaan dan saring sendiri berdasarkan harga, tipe bodi, dan jenis mesin.",
+      "action": "Jelajahi mobil"
+    },
+    "facts": {
+      "heading": "Setiap fakta membawa cap sumber dan tanggalnya.",
+      "body": "Harga yang sudah diperiksa tidak berarti semua spesifikasi ikut diperiksa. Karena itu Carsea mencatat tiap fakta di selnya sendiri, dan menyebut dengan jelas mana yang terverifikasi, mana yang perkiraan, mana yang sudah lama, dan mana yang belum kami miliki.",
+      "caption": "Contoh ilustrasi cara Carsea mencatat fakta. Ini bukan data kendaraan nyata.",
+      "vehicle": "Contoh Mobil 1.5 CVT",
+      "cells": {
+        "price": {
+          "label": "Harga OTR Jakarta",
+          "value": "Rp300.000.000",
+          "note": "Sumber: daftar harga resmi. Diperiksa 12 Sep 2026."
+        },
+        "service": {
+          "label": "Servis berkala per bulan",
+          "value": "Rp450.000",
+          "note": "Dihitung dari jadwal servis resmi dan jarak tempuh Anda."
+        },
+        "warranty": {
+          "label": "Garansi",
+          "value": "3 tahun / 100.000 km",
+          "note": "Terakhir diperiksa 2 Jan 2026. Perlu diperiksa ulang."
+        },
+        "insurance": {
+          "label": "Asuransi per bulan",
+          "value": "Belum tersedia",
+          "note": "Kami tidak mengisi angka yang tidak bisa kami dukung dengan sumber."
+        }
+      }
+    },
+    "independence": {
+      "heading": "Tidak ada yang membayar untuk tampil di sini.",
+      "points": [
+        {
+          "title": "Tanpa penempatan berbayar",
+          "body": "Tidak ada sponsor, iklan pabrikan, atau peringkat yang bisa dibeli."
+        },
+        {
+          "title": "Tanpa penjualan kontak",
+          "body": "Carsea tidak meminta nama atau nomor telepon dan tidak meneruskan Anda ke dealer."
+        },
+        {
+          "title": "Aturan yang bisa Anda baca",
+          "body": "Urutan rekomendasi mengikuti aturan tertulis dari jawaban Anda, bukan skor tersembunyi."
+        }
+      ],
+      "action": "Cara Carsea membandingkan"
+    },
+    "topics": {
+      "heading": "Yang bisa Anda teliti",
+      "items": [
+        {
+          "title": "Anggaran dan harga OTR",
+          "body": "Apa saja yang termasuk dalam harga on-the-road Jakarta, dan apa yang tidak."
+        },
+        {
+          "title": "Fitur dibanding harga",
+          "body": "Perlengkapan standar tiap varian, dibandingkan dengan harga varian itu."
+        },
+        {
+          "title": "Biaya kepemilikan bulanan",
+          "body": "BBM atau listrik, servis, pajak, dan asuransi, masing-masing ditampilkan terpisah."
+        },
+        {
+          "title": "Garansi dan bengkel resmi",
+          "body": "Syarat garansi dan bengkel resmi di Jakarta dan sekitarnya."
+        }
+      ]
+    },
+    "close": {
+      "heading": "Cakupan awal: Jakarta dan sekitarnya.",
+      "body": "Harga dan bengkel yang kami tampilkan berlaku untuk Jakarta dan sekitarnya. Katalog hanya memuat mobil yang datanya lolos pemeriksaan, jadi tidak semua mobil ada di sini."
+    }
   }
 }
