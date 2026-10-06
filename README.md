@@ -14,6 +14,7 @@ legal text is a draft, and nothing has run on a real server. See the
 - [docs/data-import.md](docs/data-import.md) — maintaining catalog data.
 - [docs/operations.md](docs/operations.md) — deploying and operating in production.
 - [docs/launch-checklist.md](docs/launch-checklist.md) — what is verified and what is left.
+- [docs/3d-preview-evaluation.md](docs/3d-preview-evaluation.md) — whether to build a 3D colour preview, and the conditions for it.
 
 ## Stack
 
