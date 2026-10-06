@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Neutral placeholders only. Carsea's semantic token layer arrives in Phase 2. */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}

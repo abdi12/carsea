@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "Carsea — Independent new-car research",
+    "description": "Carsea helps you research and compare new passenger cars in Indonesia before you buy."
+  },
+  "home": {
+    "heading": "Carsea",
+    "lead": "Independent research for choosing a new car in Indonesia.",
+    "status": "This site is under construction. The catalog and finder are not available yet."
+  },
+  "localeSwitch": {
+    "label": "Language",
+    "id": "Bahasa Indonesia",
+    "en": "English"
+  }
+}

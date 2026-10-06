@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "Carsea — Riset mobil baru yang independen",
+    "description": "Carsea membantu Anda meneliti dan membandingkan mobil penumpang baru di Indonesia sebelum membeli."
+  },
+  "home": {
+    "heading": "Carsea",
+    "lead": "Riset independen untuk memilih mobil baru di Indonesia.",
+    "status": "Situs ini sedang dibangun. Katalog dan fitur pencarian belum tersedia."
+  },
+  "localeSwitch": {
+    "label": "Bahasa",
+    "id": "Bahasa Indonesia",
+    "en": "English"
+  }
+}
