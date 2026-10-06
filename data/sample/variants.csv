@@ -1,0 +1,9 @@
+id,model_id,model_year,trim,powertrain,transmission,publication_status,source_id,verified_on
+contoh-kota-2026-12-mt,contoh-kota,2026,1.2 MT,petrol,manual,published,sample-carsea,2026-10-01
+contoh-kota-2026-12-cvt,contoh-kota,2026,1.2 CVT,petrol,cvt,published,sample-carsea,2026-10-01
+contoh-keluarga-2026-15-cvt,contoh-keluarga,2026,1.5 CVT,petrol,cvt,published,sample-carsea,2026-10-01
+contoh-keluarga-2026-15-hybrid,contoh-keluarga,2026,1.5 Hybrid,hybrid,cvt,published,sample-carsea,2026-10-01
+contoh-jelajah-2026-24-diesel-at,contoh-jelajah,2026,2.4 Diesel AT,diesel,automatic,published,sample-carsea,2026-10-01
+teladan-arus-2026-ev-standard,teladan-arus,2026,EV Standard,electric,single_speed,published,sample-carsea,2026-10-01
+teladan-ringkas-2026-15-cvt,teladan-ringkas,2026,1.5 CVT,petrol,cvt,published,sample-carsea,2026-10-01
+teladan-ringkas-2026-15-sport,teladan-ringkas,2026,1.5 Sport,petrol,cvt,draft,sample-carsea,2026-10-01

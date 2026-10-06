@@ -1,0 +1,5 @@
+region,energy_type,currency,price_per_unit,unit,valid_from,source_id,verified_on
+jabodetabek,petrol_ron90,IDR,10000,l,2026-09-01,sample-carsea,2026-10-01
+jabodetabek,petrol_ron92,IDR,12500,l,2026-09-01,sample-carsea,2026-10-01
+jabodetabek,diesel_cn51,IDR,13500,l,2026-09-01,sample-carsea,2026-10-01
+jabodetabek,electricity_home,IDR,1700,kwh,2026-09-01,sample-carsea,2026-10-01

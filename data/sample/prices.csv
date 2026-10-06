@@ -1,0 +1,8 @@
+variant_id,region,currency,amount,valid_from,valid_until,inclusions_note,source_id,verified_on
+contoh-kota-2026-12-mt,jabodetabek,IDR,185000000,2026-09-01,,Sample on-the-road price,sample-carsea,2026-10-01
+contoh-kota-2026-12-cvt,jabodetabek,IDR,205000000,2026-09-01,,Sample on-the-road price,sample-carsea,2026-10-01
+contoh-keluarga-2026-15-cvt,jabodetabek,IDR,295000000,2026-09-01,,Sample on-the-road price,sample-carsea,2026-10-01
+contoh-keluarga-2026-15-hybrid,jabodetabek,IDR,345000000,2026-09-01,,Sample on-the-road price,sample-carsea,2026-10-01
+contoh-jelajah-2026-24-diesel-at,jabodetabek,IDR,560000000,2026-09-01,,Sample on-the-road price,sample-carsea,2026-10-01
+teladan-arus-2026-ev-standard,jabodetabek,IDR,420000000,2026-09-01,,Sample on-the-road price,sample-carsea,2026-10-01
+teladan-ringkas-2026-15-cvt,jabodetabek,IDR,330000000,2026-09-01,,Sample on-the-road price,sample-carsea,2026-10-01

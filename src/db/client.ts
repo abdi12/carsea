@@ -1,24 +1,21 @@
 import "server-only";
 
-import { drizzle } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
+import { connect } from "./connection";
 
-import * as schema from "./schema";
-
-let client: ReturnType<typeof postgres> | undefined;
+let connection: ReturnType<typeof connect> | undefined;
 
 // Connect lazily so `next build` does not need a database.
-function getClient() {
-  if (!client) {
+function getConnection() {
+  if (!connection) {
     const url = process.env.DATABASE_URL;
     if (!url) throw new Error("DATABASE_URL is not set");
-    client = postgres(url, { max: 10 });
+    connection = connect(url);
   }
-  return client;
+  return connection;
 }
 
-export const getDb = () => drizzle(getClient(), { schema });
+export const getDb = () => getConnection().db;
 
 export async function pingDatabase(): Promise<void> {
-  await getClient()`select 1`;
+  await getConnection().client`select 1`;
 }

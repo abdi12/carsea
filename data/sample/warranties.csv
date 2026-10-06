@@ -1,0 +1,9 @@
+variant_id,coverage,years,distance_km,conditions,source_id,verified_on
+contoh-kota-2026-12-mt,vehicle,3,100000,Whichever comes first,sample-carsea,2026-10-01
+contoh-kota-2026-12-cvt,vehicle,3,100000,Whichever comes first,sample-carsea,2026-10-01
+contoh-keluarga-2026-15-cvt,vehicle,3,100000,Whichever comes first,sample-carsea,2026-10-01
+contoh-keluarga-2026-15-hybrid,vehicle,3,100000,Whichever comes first,sample-carsea,2026-10-01
+contoh-keluarga-2026-15-hybrid,battery,8,160000,Whichever comes first,sample-carsea,2026-10-01
+contoh-jelajah-2026-24-diesel-at,vehicle,5,150000,Whichever comes first,sample-carsea,2026-10-01
+teladan-arus-2026-ev-standard,vehicle,5,150000,Whichever comes first,sample-carsea,2026-10-01
+teladan-arus-2026-ev-standard,battery,8,160000,Whichever comes first,sample-carsea,2026-10-01

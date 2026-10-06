@@ -1,0 +1,4 @@
+id,make_id,name,address,city,region,phone,opening_hours,latitude,longitude,source_id,verified_on
+contoh-jakarta-selatan,contoh,Contoh Motor Jakarta Selatan (sample),Jl. Contoh No. 1,Jakarta Selatan,jabodetabek,,Mon-Sat 08:00-17:00,,,sample-carsea,2026-10-01
+contoh-bekasi,contoh,Contoh Motor Bekasi (sample),Jl. Contoh No. 2,Bekasi,jabodetabek,,,,,sample-carsea,2026-10-01
+teladan-tangerang,teladan,Teladan Tangerang (sample),Jl. Teladan No. 3,Tangerang,jabodetabek,,Mon-Fri 08:00-16:00,,,sample-carsea,2026-10-01
