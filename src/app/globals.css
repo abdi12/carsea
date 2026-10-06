@@ -71,7 +71,7 @@
   --color-stamp: var(--stamp);
   --color-stamp-wash: var(--stamp-wash);
 
-  --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-archivo), Arial, "Helvetica Neue", sans-serif;
 
   --shadow-sheet: var(--sheet-shadow);
 
@@ -92,6 +92,33 @@
       transform: rotate(-5deg) scale(1);
     }
   }
+}
+
+/*
+ * Fallback faces sized to match Archivo at each width, so text does not
+ * re-wrap and push the page down when the web font arrives on a slow
+ * connection. The ratios were measured against Arial with this system's
+ * tracking and word spacing applied; body text needs no adjustment.
+ */
+@font-face {
+  font-family: "Carsea Display Fallback";
+  src: local("Arial Bold"), local("Arial"), local("Roboto Bold"), local("Roboto"), local("Liberation Sans Bold");
+  font-weight: 700 800;
+  size-adjust: 129%;
+}
+
+@font-face {
+  font-family: "Carsea Title Fallback";
+  src: local("Arial Bold"), local("Arial"), local("Roboto Bold"), local("Roboto"), local("Liberation Sans Bold");
+  font-weight: 700;
+  size-adjust: 111%;
+}
+
+@font-face {
+  font-family: "Carsea Label Fallback";
+  src: local("Arial Bold"), local("Arial"), local("Roboto Bold"), local("Roboto"), local("Liberation Sans Bold");
+  font-weight: 700;
+  size-adjust: 82%;
 }
 
 @layer base {
@@ -136,6 +163,7 @@
 @layer components {
   /* Expanded heavy: titles and the wordmark. */
   .type-display {
+    font-family: var(--font-archivo), "Carsea Display Fallback", Arial, sans-serif;
     font-stretch: 125%;
     font-weight: 800;
     letter-spacing: -0.025em;
@@ -144,6 +172,7 @@
   }
 
   .type-title {
+    font-family: var(--font-archivo), "Carsea Title Fallback", Arial, sans-serif;
     font-stretch: 112%;
     font-weight: 700;
     letter-spacing: -0.015em;
@@ -154,6 +183,7 @@
 
   /* Condensed caps: cell labels and stamps. */
   .type-label {
+    font-family: var(--font-archivo), "Carsea Label Fallback", Arial, sans-serif;
     font-stretch: 75%;
     font-weight: 700;
     font-size: 0.8125rem;

@@ -20,6 +20,7 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { fill, formatNumber } from "@/lib/format";
 import { finderStore, useHydrated, useStorageAvailable } from "@/lib/research-store";
+import { track } from "@/lib/track";
 
 import { Button } from "./button";
 import { ChoiceCells } from "./choice-cells";
@@ -50,6 +51,7 @@ export function Finder({ lang, dict }: { lang: Locale; dict: Dict }) {
   const [position, setPosition] = useState<number | "review" | null>(null);
   const heading = useRef<HTMLHeadingElement>(null);
   const moved = useRef(false);
+  const started = useRef(false);
 
   const firstOpen = finderSteps.findIndex((step) => !answered(answers, step));
   const current: number | "review" =
@@ -69,6 +71,10 @@ export function Finder({ lang, dict }: { lang: Locale; dict: Dict }) {
   const update = (patch: Partial<FinderAnswers>) => {
     // Answering must not move the buyer on; only the buttons do that.
     if (position === null) setPosition(current);
+    if (!started.current) {
+      started.current = true;
+      track("finder_start");
+    }
     const next = { ...answers, ...patch };
     for (const key of Object.keys(next) as (keyof FinderAnswers)[]) {
       const value = next[key];
@@ -148,7 +154,13 @@ export function Finder({ lang, dict }: { lang: Locale; dict: Dict }) {
             >
               {dict.find.review.clear}
             </Button>
-            <Button type="button" onClick={() => router.push(`/${lang}/recommendations`)}>
+            <Button
+              type="button"
+              onClick={() => {
+                track("finder_complete");
+                router.push(`/${lang}/recommendations`);
+              }}
+            >
               {dict.find.review.submit}
               <ArrowRightIcon />
             </Button>

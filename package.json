@@ -11,7 +11,8 @@
     "test": "vitest run",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:import": "tsx scripts/import-catalog.ts"
+    "db:import": "tsx scripts/import-catalog.ts",
+    "db:review": "tsx scripts/review-data.ts"
   },
   "dependencies": {
     "csv-parse": "^7.0.3",

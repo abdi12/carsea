@@ -9,3 +9,6 @@ node_modules
 .codex
 .impeccable
 *.md
+graphify-out
+deploy/backups
+deploy/.env*

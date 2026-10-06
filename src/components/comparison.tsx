@@ -22,6 +22,8 @@ import {
   useStorageAvailable,
 } from "@/lib/research-store";
 
+import { track } from "@/lib/track";
+
 import { Button, ButtonLink } from "./button";
 import { EmptySheet, Notice, SkeletonSheet } from "./page-parts";
 import { PriceLine } from "./price-line";
@@ -78,6 +80,15 @@ export function Comparison({ lang, dict }: { lang: Locale; dict: Dict }) {
       .catch(() => controller.signal.aborted || setResult({ key: requestKey }));
     return () => controller.abort();
   }, [hydrated, wanted, requestKey]);
+
+  // A completed comparison: two or more cars actually shown.
+  const comparedCount = result?.key === requestKey && result.data
+    ? compareIds.filter((id) => result.data!.variants.some((v) => v.id === id)).length
+    : 0;
+  const viewed = comparedCount >= 2;
+  useEffect(() => {
+    if (viewed) track("comparison_viewed");
+  }, [viewed]);
 
   const loaded: Loaded = !wanted
     ? { state: "ready", today: "", variants: [] }

@@ -1,0 +1,42 @@
+# Caddy obtains and renews the TLS certificate for SITE_ADDRESS by itself,
+# and redirects HTTP to HTTPS. Use a real domain in production; "localhost"
+# gives a locally trusted certificate for testing.
+{$SITE_ADDRESS} {
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		-Server
+	}
+
+	reverse_proxy app:3000 {
+		health_uri /api/health
+		health_interval 5s
+	}
+
+	# Minimal access log (SPEC §12): addresses are truncated so a line does
+	# not point to one device, and query strings, cookies, and other request
+	# headers are dropped.
+	log {
+		output stdout
+		format filter {
+			wrap json
+			fields {
+				request>remote_ip ip_mask {
+					ipv4 24
+					ipv6 48
+				}
+				request>client_ip ip_mask {
+					ipv4 24
+					ipv6 48
+				}
+				request>uri query {
+					delete ids
+				}
+				request>headers delete
+				request>tls delete
+				resp_headers delete
+			}
+		}
+	}
+}

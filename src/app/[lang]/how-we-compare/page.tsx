@@ -3,6 +3,7 @@ import { Container, PageCover } from "@/components/page-parts";
 import { methodology } from "@/content/methodology";
 import { fill, formatDate } from "@/lib/format";
 import { pageContext, pageMetadata } from "@/lib/page";
+import { TrackView } from "@/lib/track";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/how-we-compare">) {
   const { lang } = await pageContext(params);
@@ -15,6 +16,7 @@ export default async function MethodologyPage({ params }: PageProps<"/[lang]/how
   const page = methodology[lang];
   return (
     <main id="content">
+      <TrackView event="methodology_view" />
       <PageCover title={page.title} lead={page.summary} />
       <Container className="py-10 sm:py-14">
         <ArticleBody article={page} />

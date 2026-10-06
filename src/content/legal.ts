@@ -40,13 +40,14 @@ export const privacy: Record<Locale, Article> = {
       {
         heading: "Yang dikirim ke server",
         paragraphs: [
-          "Halaman perbandingan meminta data mobil dari server dengan menyebut kode mobil yang Anda pilih. Permintaan itu tidak memuat jawaban pencari Anda. Seperti situs web lain, server mencatat permintaan teknis seperti alamat halaman dan waktu.",
+          "Halaman perbandingan meminta data mobil dari server dengan menyebut kode mobil yang Anda pilih. Permintaan itu tidak memuat jawaban pencari Anda. Seperti situs web lain, server mencatat permintaan teknis seperti alamat halaman dan waktu; alamat IP dalam catatan itu dipotong sehingga tidak menunjuk ke satu perangkat.",
         ],
       },
       {
         heading: "Analitik",
         paragraphs: [
-          "Carsea saat ini tidak memasang analitik. Jika nanti dipasang, analitik itu akan bersifat agregat dan tanpa cookie, dan tidak akan memuat jawaban atau identitas Anda.",
+          "Carsea menghitung berapa kali beberapa tindakan terjadi per hari, misalnya pencari mobil dimulai, perbandingan dibuka, atau panduan dibaca. Yang dikirim hanya nama tindakannya.",
+          "Hitungan ini tidak memakai cookie dan tidak memuat pengenal, alamat IP, jawaban Anda, atau mobil yang Anda lihat, sehingga tidak bisa dikaitkan dengan Anda. Jika peramban Anda mengirim sinyal Global Privacy Control atau Do Not Track, tidak ada yang dikirim.",
         ],
       },
       {
@@ -88,13 +89,14 @@ export const privacy: Record<Locale, Article> = {
       {
         heading: "What is sent to the server",
         paragraphs: [
-          "The comparison page asks the server for car data by naming the codes of the cars you chose. That request does not contain your finder answers. Like any website, the server records technical requests such as the page address and time.",
+          "The comparison page asks the server for car data by naming the codes of the cars you chose. That request does not contain your finder answers. Like any website, the server records technical requests such as the page address and time; IP addresses in those records are truncated so they do not point to one device.",
         ],
       },
       {
         heading: "Analytics",
         paragraphs: [
-          "Carsea does not currently run analytics. If it is added later, it will be aggregate and cookieless, and will not contain your answers or identity.",
+          "Carsea counts how many times a few actions happen each day, such as the car finder being started, a comparison being opened, or a guide being read. Only the name of the action is sent.",
+          "These counts use no cookie and contain no identifier, IP address, answer of yours, or car you looked at, so they cannot be linked to you. If your browser sends a Global Privacy Control or Do Not Track signal, nothing is sent.",
         ],
       },
       {

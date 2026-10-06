@@ -10,6 +10,7 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { fill, formatIdr, formatNumber } from "@/lib/format";
 import { finderStore, useHydrated } from "@/lib/research-store";
+import { track } from "@/lib/track";
 
 import { ButtonLink } from "./button";
 import { CarActions } from "./car-actions";
@@ -157,7 +158,7 @@ export function Recommendations({
 
               <div className="mt-5 flex flex-wrap items-start justify-between gap-4">
                 <CarActions id={car.id} name={variantName(car)} lang={lang} dict={dict.actions} />
-                <ButtonLink href={`/${lang}/cars/${car.id}`}>
+                <ButtonLink href={`/${lang}/cars/${car.id}`} onClick={() => track("recommendation_to_detail")}>
                   {dict.recs.view}
                   <ArrowRightIcon />
                 </ButtonLink>

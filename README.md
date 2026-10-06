@@ -3,14 +3,17 @@
 Independent new-car research for buyers in Indonesia. See [SPEC.md](SPEC.md) for
 the product specification and delivery phases.
 
-**Status:** Phase 4. Every public page in the specification is built in both
-languages and reads from the catalog. No real vehicle data is loaded: with an
-empty database the catalog pages say so, and the only data in the repository
-is a fictional sample set.
+**Status:** Phase 5. The product is built and the production tooling
+(deploy, rollback, encrypted backup, restore, data review) has been exercised
+on a local stack. It is not launched: there is no real vehicle data, the
+legal text is a draft, and nothing has run on a real server. See the
+[launch checklist](docs/launch-checklist.md).
 
 - [PRODUCT.md](PRODUCT.md) — product context for design work.
 - [DESIGN.md](DESIGN.md) — the design system: tokens, type, components, rules.
 - [docs/data-import.md](docs/data-import.md) — maintaining catalog data.
+- [docs/operations.md](docs/operations.md) — deploying and operating in production.
+- [docs/launch-checklist.md](docs/launch-checklist.md) — what is verified and what is left.
 
 ## Stack
 
@@ -39,11 +42,14 @@ npm run dev                 # http://localhost:3000
 | `npm run db:generate` | Generate a SQL migration from `src/db/schema.ts` |
 | `npm run db:migrate` | Apply pending migrations to `DATABASE_URL` |
 | `npm run db:import -- <dir>` | Validate and load catalog CSV files ([guide](docs/data-import.md)) |
+| `npm run db:review` | Report stale data, missing prices, sample data, and usage counts |
 
 `drizzle-kit` reads `DATABASE_URL` from the environment; export it or run the
 scripts with `node --env-file=.env`.
 
 ## Running the full stack in Docker
+
+For a quick local run of the app image next to the development database:
 
 ```bash
 docker compose --profile app up -d --build
@@ -52,6 +58,10 @@ curl http://localhost:3000/api/health
 
 `/api/health` returns `200` only when the app can reach the database, and `503`
 otherwise. The container health check uses it.
+
+Production uses a separate stack in `deploy/` with a TLS proxy, a restricted
+database role, and scripts for deploy, rollback, backup, and restore. See
+[docs/operations.md](docs/operations.md).
 
 ## Layout
 
@@ -74,6 +84,8 @@ otherwise. The container health check uses it.
 - `src/import/` and `scripts/import-catalog.ts` — CSV reading, validation,
   reporting, and writing.
 - `data/sample/` — fictional catalog for development. Never for production.
+- `deploy/` — the production Compose stack, proxy configuration, and
+  operational scripts.
 
 ## How the pages get their data
 
@@ -85,15 +97,16 @@ otherwise. The container health check uses it.
   are never sent to the server. Compare fetches cars by id from
   `/api/variants`.
 
+## Privacy by construction
+
+- Finder answers, the comparison, and saved cars never leave the browser.
+- Usage is measured as per-day counts of named actions (`/api/event`). There
+  is no cookie, identifier, or per-visitor record, and nothing is sent when the
+  browser signals Global Privacy Control or Do Not Track.
+- The only cookie is the language choice.
+
 ## Not done yet
 
-- Real catalog data, licensed photography, and a map for service centres.
-- Legal review of the privacy and terms text, which is marked as a draft.
-- Editorial review of the guides and of the English translations.
-- Analytics, and the Phase 5 production hardening.
-
-The font (Archivo) is fetched from Google Fonts at build time and self-hosted
-from then on, so builds need network access.
-
-Phase 1 also calls for confirming data sources, data rights, cost-model inputs,
-and image rights (SPEC §15). Those need decisions outside this repository.
+See [docs/launch-checklist.md](docs/launch-checklist.md). In short: real
+catalog data and photography, legal and editorial review, manual accessibility
+and real-device testing, and a real server.

@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import type { ServiceCenterView } from "@/domain/catalog-view";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { fill } from "@/lib/format";
+import { track } from "@/lib/track";
 
 import { EmptySheet } from "./page-parts";
 import { SourceNote } from "./provenance";
@@ -25,6 +26,13 @@ export function ServiceCentreList({
 }) {
   const [query, setQuery] = useState("");
   const [make, setMake] = useState("");
+  const searched = useRef(false);
+  const noteSearch = () => {
+    if (!searched.current) {
+      searched.current = true;
+      track("service_search");
+    }
+  };
   const makes = [...new Map(centres.map((c) => [c.makeId, c.makeName]))];
 
   const needle = query.trim().toLowerCase();
@@ -48,7 +56,10 @@ export function ServiceCentreList({
             id="centre-search"
             type="search"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              noteSearch();
+              setQuery(e.target.value);
+            }}
             placeholder={dict.service.searchPlaceholder}
             className={`${field} mt-2`}
           />
@@ -57,7 +68,15 @@ export function ServiceCentreList({
           <label htmlFor="centre-make" className="type-label block text-ink-muted">
             {dict.service.make}
           </label>
-          <select id="centre-make" value={make} onChange={(e) => setMake(e.target.value)} className={`${field} mt-2`}>
+          <select
+            id="centre-make"
+            value={make}
+            onChange={(e) => {
+              noteSearch();
+              setMake(e.target.value);
+            }}
+            className={`${field} mt-2`}
+          >
             <option value="">{dict.service.allMakes}</option>
             {makes.map(([id, name]) => (
               <option key={id} value={id}>

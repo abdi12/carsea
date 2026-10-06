@@ -7,6 +7,7 @@ import { getGuide, guideSlugs } from "@/content/guides";
 import { locales } from "@/i18n/config";
 import { fill, formatDate } from "@/lib/format";
 import { pageContext, pageMetadata } from "@/lib/page";
+import { TrackView } from "@/lib/track";
 
 type Props = PageProps<"/[lang]/guides/[slug]">;
 
@@ -30,6 +31,7 @@ export default async function GuidePage({ params }: Props) {
 
   return (
     <main id="content">
+      <TrackView event="guide_view" />
       <PageCover title={guide.title} lead={guide.summary}>
         <p className="mt-6">
           <Link href={`/${lang}/guides`} className="underline decoration-cover-rule hover:decoration-on-cover">

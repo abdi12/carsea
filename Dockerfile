@@ -4,6 +4,15 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 
+# Operational tooling: migrations, catalog import, and the data review.
+# Not part of the running app; started on demand (see docs/operations.md).
+FROM node:24-alpine AS tools
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+USER node
+ENTRYPOINT ["npm", "run"]
+
 FROM node:24-alpine AS build
 WORKDIR /app
 # Public origin baked into canonical/alternate links of prerendered pages.

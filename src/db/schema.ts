@@ -9,6 +9,7 @@ import {
   integer,
   jsonb,
   pgTable,
+  primaryKey,
   serial,
   text,
   timestamp,
@@ -227,3 +228,17 @@ export const importRuns = pgTable("import_runs", {
   rowsRejected: integer("rows_rejected").notNull(),
   report: jsonb("report").notNull(),
 });
+
+/**
+ * Aggregate usage: how many times a named action happened on a day.
+ * This is the whole analytics store; it holds no per-visitor rows.
+ */
+export const usageCounts = pgTable(
+  "usage_counts",
+  {
+    day: date("day").notNull(),
+    event: text("event").notNull(),
+    count: integer("count").notNull().default(0),
+  },
+  (t) => [primaryKey({ columns: [t.day, t.event] })],
+);

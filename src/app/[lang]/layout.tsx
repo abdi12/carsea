@@ -17,6 +17,9 @@ const archivo = Archivo({
   axes: ["wdth"],
   variable: "--font-archivo",
   display: "swap",
+  // The generated fallback only fits the regular width. globals.css
+  // defines width-matched fallbacks for each type role instead.
+  adjustFontFallback: false,
 });
 
 // Light is the default; only a saved choice switches to dark, and it is

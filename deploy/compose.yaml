@@ -1,0 +1,119 @@
+# Production stack: reverse proxy with automatic TLS, the app, PostgreSQL.
+# Run from the repository root:
+#   docker compose -f deploy/compose.yaml --env-file deploy/.env.production <command>
+# The operations guide (docs/operations.md) wraps the common commands.
+
+# A distinct project name keeps this stack and its volumes apart from the
+# development stack in the repository root, which Compose names "carsea".
+name: carsea-prod
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "5"
+
+services:
+  proxy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:?set in deploy/.env.production}
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks: [web]
+    logging: *logging
+
+  app:
+    image: carsea-app:${APP_TAG:?set by deploy/deploy.sh}
+    build:
+      context: ..
+      target: run
+      args:
+        SITE_URL: ${SITE_URL:?set in deploy/.env.production}
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://${APP_DB_USER:?}:${APP_DB_PASSWORD:?}@db:5432/${POSTGRES_DB:?}
+    # No published port: only the proxy can reach the app.
+    networks: [web, data]
+    logging: *logging
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:?}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?}
+      POSTGRES_DB: ${POSTGRES_DB:?}
+      APP_DB_USER: ${APP_DB_USER:?}
+      APP_DB_PASSWORD: ${APP_DB_PASSWORD:?}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init-roles.sh:/docker-entrypoint-initdb.d/10-roles.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    # No published port: the database is reachable only on the data network.
+    networks: [data]
+    logging: *logging
+
+  # Migrations, catalog import, and data review. Runs as the owner role.
+  #   ... run --rm tools db:migrate
+  #   ... run --rm tools db:import -- /catalog --dry-run
+  tools:
+    image: carsea-tools:${APP_TAG:?}
+    build:
+      context: ..
+      target: tools
+    profiles: [tools]
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+    volumes:
+      - ${CATALOG_DIR:-./catalog}:/catalog:ro
+    networks: [data]
+
+  # One encrypted dump per run; schedule it from the host's cron.
+  backup:
+    build:
+      context: .
+      dockerfile: backup.Dockerfile
+    profiles: [backup]
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGHOST: db
+      PGUSER: ${POSTGRES_USER}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      PGDATABASE: ${POSTGRES_DB}
+      BACKUP_RECIPIENT: ${BACKUP_RECIPIENT:?an age public key}
+      BACKUP_KEEP_DAYS: ${BACKUP_KEEP_DAYS:-30}
+    volumes:
+      - ${BACKUP_DIR:-./backups}:/backups
+    networks: [data]
+
+networks:
+  web:
+  data:
+    internal: true
+
+volumes:
+  pgdata:
+  caddy_data:
+  caddy_config:

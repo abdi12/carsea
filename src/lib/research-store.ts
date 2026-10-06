@@ -4,6 +4,8 @@ import { useSyncExternalStore } from "react";
 
 import { type FinderAnswers, parseFinderAnswers, parseIdList } from "@/domain/finder";
 
+import { track } from "./track";
+
 // Everything a buyer saves stays in their own browser (SPEC §6.4): finder
 // answers, the comparison, and the shortlist. Nothing here is sent anywhere.
 //
@@ -107,10 +109,12 @@ export function toggleCompare(id: string): boolean {
   const ids = compareStore.get();
   if (ids.includes(id)) {
     compareStore.set(ids.filter((other) => other !== id));
+    track("compare_remove");
     return true;
   }
   if (ids.length >= MAX_COMPARE) return false;
   compareStore.set([...ids, id]);
+  track("compare_add");
   return true;
 }
 
